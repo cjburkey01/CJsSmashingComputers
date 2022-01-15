@@ -6,6 +6,7 @@ plugins {
 sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
+// ModID
 archivesBaseName = project.archives_base_name
 version = project.mod_version
 group = project.maven_group
@@ -30,9 +31,11 @@ dependencies {
 
 processResources {
 	inputs.property "version", project.version
+	inputs.property "modid", project.archivesBaseName
 
 	filesMatching("fabric.mod.json") {
 		expand "version": project.version
+		expand "modid": project.archivesBaseName
 	}
 }
 
@@ -51,22 +54,5 @@ java {
 jar {
 	from("LICENSE") {
 		rename { "${it}_${project.archivesBaseName}"}
-	}
-}
-
-// configure the maven publication
-publishing {
-	publications {
-		mavenJava(MavenPublication) {
-			from components.java
-		}
-	}
-
-	// See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
-	repositories {
-		// Add repositories to publish to here.
-		// Notice: This block does NOT have the same function as the block in the top level.
-		// The repositories here will be used for publishing your artifact, not for
-		// retrieving dependencies.
 	}
 }
