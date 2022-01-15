@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "cjs-smash-comp:block/smashing_comp"
+    }
+}

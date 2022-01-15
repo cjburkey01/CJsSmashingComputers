@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "cjs-smash-comp:block/smashing_comp" }
+    }
+}

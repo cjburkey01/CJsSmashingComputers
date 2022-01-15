@@ -1,0 +1,6 @@
+{
+    // Blocks
+    "block.cjs-smash-comp.smashing_comp": "CJ's Smashing Computer",
+
+    "debug.cjs-smash-comp.debug_print": "Computer ID #%d"
+}
